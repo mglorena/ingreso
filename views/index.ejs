@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Verificar DNI</title>
+  <link rel="stylesheet" href="/style.css">
+np
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#verificarBtn').click(function(event) {
+        event.preventDefault();
+        var dni = $('#dniInput').val();
+        $.ajax({
+          type: 'POST',
+          url: '/verificar-dni',
+          data: { dni: dni },
+          success: function(response) {
+            $('#resultado').text(response);
+          },
+          error: function() {
+            $('#resultado').text('Error al realizar la verificación.');
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>Verificar DNI</h1>
+  <input type="text" id="dniInput" placeholder="Ingresa un DNI">
+  <button id="verificarBtn">Verificar</button>
+  <div id="resultado"></div>
+</body>
+</html>
