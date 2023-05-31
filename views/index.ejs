@@ -4,8 +4,7 @@
   <meta charset="utf-8">
   <title>Verificar DNI</title>
   <link rel="stylesheet" href="/style.css">
-np
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/jquery-3.6.0.min.js"></script>
   <script>
     $(document).ready(function() {
       $('#verificarBtn').click(function(event) {
@@ -27,9 +26,11 @@ np
   </script>
 </head>
 <body>
-  <h1>Verificar DNI</h1>
-  <input type="text" id="dniInput" placeholder="Ingresa un DNI">
+    <div id="container">
+  <h1>Verificar DNI:</h1>
+  <input type="text" id="dniInput" placeholder="Ingrese un DNI">
   <button id="verificarBtn">Verificar</button>
   <div id="resultado"></div>
+</div>
 </body>
 </html>
